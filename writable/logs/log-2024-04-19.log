@@ -1,0 +1,142 @@
+ERROR - 2024-04-19 08:05:22 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'ciappuser'@'localhost' (using password: YES) in E:\CI course\ciapp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 E:\CI course\ciapp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'ciappuser', Object(SensitiveParameterValue), 'ciapp', 3307, '', 0)
+#1 E:\CI course\ciapp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\CI course\ciapp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\CI course\ciapp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1471): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 E:\CI course\ciapp\app\Controllers\Articles.php(8): CodeIgniter\Database\BaseConnection->listTables()
+#5 E:\CI course\ciapp\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Articles->index()
+#6 E:\CI course\ciapp\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+#7 E:\CI course\ciapp\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 E:\CI course\ciapp\vendor\codeigniter4\framework\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 E:\CI course\ciapp\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 E:\CI course\ciapp\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in E:\CI course\ciapp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 E:\CI course\ciapp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\CI course\ciapp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\CI course\ciapp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1471): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 E:\CI course\ciapp\app\Controllers\Articles.php(8): CodeIgniter\Database\BaseConnection->listTables()
+#4 E:\CI course\ciapp\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Articles->index()
+#5 E:\CI course\ciapp\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+#6 E:\CI course\ciapp\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 E:\CI course\ciapp\vendor\codeigniter4\framework\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#8 E:\CI course\ciapp\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 E:\CI course\ciapp\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-04-19 08:05:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: articles]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseConnection.php(1471): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FROM `ciapp`')
+ 3 APPPATH\Controllers\Articles.php(8): CodeIgniter\Database\BaseConnection->listTables()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Articles->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-04-19 10:11:11 --> ArgumentCountError: Too few arguments to function App\Controllers\Articles::showRecords(), 0 passed in E:\CI course\ciapp\vendor\codeigniter4\framework\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: articles/1]
+in APPPATH\Controllers\Articles.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Articles->showRecords()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-04-19 10:24:54 --> ErrorException: Undefined variable $article
+[Method: GET, Route: articles/1]
+in APPPATH\Views\Articles\showRecord.php on line 5.
+ 1 APPPATH\Views\Articles\showRecord.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $article', 'E:\\CI course\\ciapp\\app\\Views\\Articles\\showRecord.php', 5)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\CI course\\ciapp\\app\\Views\\Articles\\showRecord.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Articles/showRecord', [], true)
+ 5 APPPATH\Controllers\Articles.php(29): view('Articles/showRecord')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Articles->showRecord('1')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-04-19 10:25:17 --> ErrorException: Undefined variable $article
+[Method: GET, Route: articles/1]
+in APPPATH\Views\Articles\showRecord.php on line 5.
+ 1 APPPATH\Views\Articles\showRecord.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $article', 'E:\\CI course\\ciapp\\app\\Views\\Articles\\showRecord.php', 5)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\CI course\\ciapp\\app\\Views\\Articles\\showRecord.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Articles/showRecord', [], true)
+ 5 APPPATH\Controllers\Articles.php(29): view('Articles/showRecord', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Articles->showRecord('1')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-04-19 10:27:04 --> TypeError: Cannot access offset of type string on string
+[Method: GET, Route: articles/1]
+in APPPATH\Views\Articles\showRecord.php on line 6.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Articles/showRecord', [], true)
+ 4 APPPATH\Controllers\Articles.php(29): view('Articles/showRecord', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Articles->showRecord('1')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-04-19 10:28:01 --> TypeError: Cannot access offset of type string on string
+[Method: GET, Route: articles/1]
+in APPPATH\Views\Articles\showRecord.php on line 7.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Articles/showRecord', [], true)
+ 4 APPPATH\Controllers\Articles.php(29): view('Articles/showRecord', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Articles->showRecord('1')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-04-19 10:29:18 --> TypeError: Cannot access offset of type string on string
+[Method: GET, Route: articles/1]
+in APPPATH\Views\Articles\showRecord.php on line 6.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Articles/showRecord', [], true)
+ 4 APPPATH\Controllers\Articles.php(29): view('Articles/showRecord', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Articles->showRecord('1')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-04-19 10:29:38 --> TypeError: Cannot access offset of type string on string
+[Method: GET, Route: articles/1]
+in APPPATH\Views\Articles\showRecord.php on line 6.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Articles/showRecord', [], true)
+ 4 APPPATH\Controllers\Articles.php(29): view('Articles/showRecord', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Articles->showRecord('1')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-04-19 10:29:48 --> ParseError: syntax error, unexpected token ";"
+[Method: GET, Route: articles/1]
+in APPPATH\Views\Articles\showRecord.php on line 6.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Articles/showRecord', [], true)
+ 3 APPPATH\Controllers\Articles.php(29): view('Articles/showRecord', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Articles->showRecord('1')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articles))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
